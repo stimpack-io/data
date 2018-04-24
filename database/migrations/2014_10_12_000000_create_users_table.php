@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password', 60)->nullable();
             $table->string('provider');
             $table->string('provider_id');
+            $table->string('stimpack_token');
             $table->rememberToken();
             $table->timestamps();
         });

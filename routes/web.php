@@ -11,10 +11,13 @@
 |
 */
 
-Route::get('/', 'Auth\LoginController@redirectToProvider');
-
-Route::get('login/github', 'Auth\LoginController@redirectToProvider');
+// Register in order to upload packs
+Route::get('/register', 'Auth\LoginController@redirectToProvider');
+Route::get('/login', 'Auth\LoginController@redirectToProvider');
 Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
-Auth::routes();
+Route::get('/welcome', function() {
+    return view('welcome');
+});
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Packs
+Route::get('/packs', 'PackController@index');

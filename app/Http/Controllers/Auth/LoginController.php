@@ -29,7 +29,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/packs';
 
     /**
      * Create a new controller instance.
@@ -54,7 +54,7 @@ class LoginController extends Controller
     /**
      * Obtain the user information from provider.  Check if the user already exists in our
      * database by looking up their provider_id in the database.
-     * If the user exists, log them in. Otherwise, create a new user then log them in. After that 
+     * If the user exists, log them in. Otherwise, create a new user then log them in. After that
      * redirect them to the authenticated users homepage.
      *
      * @return Response
@@ -82,13 +82,22 @@ class LoginController extends Controller
             return $authUser;
         }
 
+        /*
+        dd(User::create([
+            'name'     => $user->name,
+            'email'    => $user->email,
+            'provider' => 'github',
+            'provider_id' => $user->id,
+            'stimpack_token' => bin2hex(random_bytes(24))
+        ]));
+        */
+
         return User::create([
             'name'     => $user->name,
             'email'    => $user->email,
             'provider' => 'github',
-            'provider_id' => $user->id
+            'provider_id' => $user->id,
+            'stimpack_token' => bin2hex(random_bytes(24))
         ]);
-    }    
+    }
 }
-
-
