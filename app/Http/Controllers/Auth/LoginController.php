@@ -82,22 +82,14 @@ class LoginController extends Controller
             return $authUser;
         }
 
-        /*
-        dd(User::create([
-            'name'     => $user->name,
-            'email'    => $user->email,
-            'provider' => 'github',
-            'provider_id' => $user->id,
-            'stimpack_token' => bin2hex(random_bytes(24))
-        ]));
-        */
+        $this->redirectTo = '/welcome';
 
         return User::create([
             'name'     => $user->name,
             'email'    => $user->email,
             'provider' => 'github',
             'provider_id' => $user->id,
-            'stimpack_token' => bin2hex(random_bytes(24))
+            'stimpack_io_token' => bin2hex(random_bytes(24))
         ]);
     }
 }

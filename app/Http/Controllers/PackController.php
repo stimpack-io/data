@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\UploadRequest;
 use App\Pack;
+use App\User;
 
 class PackController extends Controller
 {
@@ -14,8 +16,14 @@ class PackController extends Controller
         return view('packs')->with(["packs" => $packs]);
     }
 
-    public function upload() {
-        return "Cool! At this point everything is allowed.";
+    public function upload(UploadRequest $request) {
+        $pack = new Pack();
+        $pack->name = $request->name;
+        $pack->description = $request->description;
+        $pack->content = $request->fileContent;
+        $pack->user_id = $this->user()->id;        
+        $pack->icon = "cube";
+        $pack->save();       
     }
 
     private function transformPacks($packs) {
@@ -34,6 +42,11 @@ class PackController extends Controller
 
         unset($pack->user_id);
         return $pack;
+    }
+
+    private function user()
+    {
+        return User::where('stimpack_io_token', request()->header('stimpack-io-token'))->first();
     }
 
 
