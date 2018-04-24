@@ -21,3 +21,5 @@ Route::get('/welcome', function() {
 
 // Packs
 Route::get('/packs', 'PackController@index');
+Route::post('/packs/upload', 'PackController@upload');
+//Route::get('/packs/upload', 'PackController@upload');

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Pack;
 
 class DatabaseSeeder extends Seeder
 {
@@ -11,6 +12,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
+        Pack::create([
+          "name" => "Add Socialite"
+        ]);
+        Pack::create([
+          "name" => "Create content site"
+        ]);
+        Pack::create([
+          "name" => "Create documentation site"
+        ]);
     }
 }

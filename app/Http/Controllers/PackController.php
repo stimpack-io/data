@@ -10,7 +10,12 @@ class PackController extends Controller
     public function index() {
         //$packs = Pack::with('user')->get();
         //return $this->transformPacks($packs);
-        return view('packs');
+        $packs = Pack::all();
+        return view('packs')->with(["packs" => $packs]);
+    }
+
+    public function upload() {
+        return "Cool! At this point everything is allowed.";
     }
 
     private function transformPacks($packs) {
@@ -30,4 +35,6 @@ class PackController extends Controller
         unset($pack->user_id);
         return $pack;
     }
+
+
 }
