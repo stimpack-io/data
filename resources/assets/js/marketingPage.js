@@ -13,8 +13,8 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-import Main from './components/Main';
+import MarketingPage from './components/MarketingPage';
 import React from 'react';
 import { render } from 'react-dom';
 
-render(<Main />, document.getElementById('main'));
+//render(<MarketingPage />, document.getElementById('main'));

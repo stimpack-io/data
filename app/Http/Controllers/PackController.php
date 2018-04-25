@@ -13,7 +13,11 @@ class PackController extends Controller
         //$packs = Pack::with('user')->get();
         //return $this->transformPacks($packs);
         $packs = Pack::all();
-        return view('packs')->with(["packs" => $packs]);
+        $data = collect([
+            "packs" => $packs
+        ]);
+        
+        return view('data')->with(["data" => $data]);
     }
 
     public function upload(UploadRequest $request) {

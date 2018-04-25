@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 
-export default class Main extends Component {
+export default class MarketingPage extends Component {
     render() {
         return (
             <div className="container">
@@ -19,8 +19,4 @@ export default class Main extends Component {
             </div>
         );
     }
-}
-
-if (document.getElementById('example')) {
-    ReactDOM.render(<Example />, document.getElementById('example'));
 }
