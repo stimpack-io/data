@@ -16,7 +16,6 @@ export default class DataPage extends Component {
 
     renderPacks() {
         return data.packs.map(pack => {
-            console.log(pack);
             return (
                 <Col sm="4" key={pack.id}>
                     <Card className="pack-card">

@@ -36477,7 +36477,6 @@ var DataPage = function (_Component) {
             var _this2 = this;
 
             return data.packs.map(function (pack) {
-                console.log(pack);
                 return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
                     __WEBPACK_IMPORTED_MODULE_2_reactstrap__["g" /* Col */],
                     { sm: '4', key: pack.id },
