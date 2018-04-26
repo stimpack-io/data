@@ -1,130 +1,45 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { Card, Button, CardImg, CardTitle, CardText, CardGroup,
+import { Card, Button, CardImg, CardTitle, CardText, CardGroup, CardDeck,
     CardSubtitle, CardBody, Col, Row } from 'reactstrap';
 
 export default class DataPage extends Component {
     render() {
         return (
             <div className="container">
-                <h1>Lets browse some packs</h1>
-                <img src="img/stimpack_favicon.png" />
-                {this.renderCards()}
+                <Row>
+                    {this.renderPacks()}
+                </Row>
             </div>
         );
     }
 
-    renderCards() {
-        return (
-            <Row>
-            <Col sm="4">
-              <Card>
-                <CardImg top src="https://placeholdit.imgix.net/~text?txtsize=33&txt=256%C3%97180&w=256&h=180" alt="Card image cap" />
-                <CardBody>
-                  <CardTitle>Card title</CardTitle>
-                  <CardSubtitle>Card subtitle</CardSubtitle>
-                  <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
-                  <Button>Button</Button>
-                </CardBody>
-              </Card>
-            </Col>
-            <Col sm="4">
-              <Card>
-                <CardImg top src="https://placeholdit.imgix.net/~text?txtsize=33&txt=256%C3%97180&w=256&h=180" alt="Card image cap" />
-                <CardBody>
-                  <CardTitle>Card title</CardTitle>
-                  <CardSubtitle>Card subtitle</CardSubtitle>
-                  <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
-                  <Button>Button</Button>
-                </CardBody>
-              </Card>
-            </Col>
-            <Col sm="4">
-              <Card>
-                <CardImg top src="https://placeholdit.imgix.net/~text?txtsize=33&txt=256%C3%97180&w=256&h=180" alt="Card image cap" />
-                <CardBody>
-                  <CardTitle>Card title</CardTitle>
-                  <CardSubtitle>Card subtitle</CardSubtitle>
-                  <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
-                  <Button>Button</Button>
-                </CardBody>
-              </Card>
-            </Col>
-            <Col sm="4">
-              <Card>
-                <CardImg top src="https://placeholdit.imgix.net/~text?txtsize=33&txt=256%C3%97180&w=256&h=180" alt="Card image cap" />
-                <CardBody>
-                  <CardTitle>Card title</CardTitle>
-                  <CardSubtitle>Card subtitle</CardSubtitle>
-                  <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
-                  <Button>Button</Button>
-                </CardBody>
-              </Card>
-            </Col>
-            <Col sm="4">
-              <Card>
-                <CardImg top src="https://placeholdit.imgix.net/~text?txtsize=33&txt=256%C3%97180&w=256&h=180" alt="Card image cap" />
-                <CardBody>
-                  <CardTitle>Card title</CardTitle>
-                  <CardSubtitle>Card subtitle</CardSubtitle>
-                  <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
-                  <Button>Button</Button>
-                </CardBody>
-              </Card>
-            </Col>
-            <Col sm="4">
-              <Card>
-                <CardImg top src="https://placeholdit.imgix.net/~text?txtsize=33&txt=256%C3%97180&w=256&h=180" alt="Card image cap" />
-                <CardBody>
-                  <CardTitle>Card title</CardTitle>
-                  <CardSubtitle>Card subtitle</CardSubtitle>
-                  <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
-                  <Button>Button</Button>
-                </CardBody>
-              </Card>
-            </Col>
-            <Col sm="4">
-              <Card>
-                <CardImg top src="https://placeholdit.imgix.net/~text?txtsize=33&txt=256%C3%97180&w=256&h=180" alt="Card image cap" />
-                <CardBody>
-                  <CardTitle>Card title</CardTitle>
-                  <CardSubtitle>Card subtitle</CardSubtitle>
-                  <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
-                  <Button>Button</Button>
-                </CardBody>
-              </Card>
-            </Col>
-            <Col sm="4">
-              <Card>
-                <CardImg top src="https://placeholdit.imgix.net/~text?txtsize=33&txt=256%C3%97180&w=256&h=180" alt="Card image cap" />
-                <CardBody>
-                  <CardTitle>Card title</CardTitle>
-                  <CardSubtitle>Card subtitle</CardSubtitle>
-                  <CardText>This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</CardText>
-                  <Button>Button</Button>
-                </CardBody>
-              </Card>
-            </Col>                                                
-            </Row>
-          );        
-    }
-
-    renderPack() {
+    renderPacks() {
         return data.packs.map(pack => {
+            console.log(pack);
             return (
-                <div key={pack.id} className="row justify-content-center">
-                    <div className="col-md-3">
-                        <div className="card">
-                            <div className="card-header">{pack.name}</div>
-                            
-                            <div className="card-body">
-                                <img src="img/stimpack_favicon.png" />
-                                {pack.description}
-                            </div>
+                <Col sm="4" key={pack.id}>
+                    <Card className="pack-card">
+                        <div className="pack-icon-container">
                         </div>
-                    </div>
-                </div>
+                        <CardBody className="pack-body">
+                            <CardTitle>{pack.name}</CardTitle>
+                            <CardSubtitle><a href={"https://github.com/" + pack.user.name}>github.com/{pack.user.name}</a></CardSubtitle>
+                            <CardText className="pack-description">{pack.description}</CardText>
+                            <Button value={pack.name} onClick={this.open} className="pack-button">Open</Button>
+                            <Button value={pack.id} onClick={this.review} className="pack-button">Review JSON</Button>                            
+                        </CardBody>
+                    </Card>
+                </Col>
             );
         });
     }
+
+    open(event) {
+        window.open('http://stimpack.test/open/ajthinking/' + event.target.value, '_blank');
+    }
+
+    review(event) {
+        window.open('http://data.stimpack.test/packs/' + event.target.value + '/review', '_blank');
+    }    
 }

@@ -9,5 +9,5 @@
 
     </script>
 
-  <script src="{{asset('js/dataPage.js')}}" ></script>
+  <script src="{{asset('js/app.js')}}" ></script>
 </body>

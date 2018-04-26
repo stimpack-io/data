@@ -26,4 +26,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token', 'stimpack_io_token'
     ];
+
+    function packs() {
+        return $this->hasMany('App\Comment');
+    }    
 }

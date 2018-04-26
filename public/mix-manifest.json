@@ -1,5 +1,4 @@
 {
-    "/js/marketingPage.js": "/js/marketingPage.js",
-    "/js/dataPage.js": "/js/dataPage.js",
+    "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css"
 }

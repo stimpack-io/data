@@ -5,13 +5,14 @@
 // Variables
 @import "variables";
 
+@import "pack";
+
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-@import "mixins.scss";
-@import "global.scss";
-@import "navbar.scss";
-@import "masthead.scss";
-@import "services.scss";
-@import "portfolio.scss";
-@import "bootstrap-overrides.scss";
+body {
+  font-family: 'Open Sans', sans-serif;
+  background: $semi-dark;  /* fallback for old browsers */
+  background: linear-gradient(to left, lighten($semi-dark, 1%), lighten($semi-dark, 11%), lighten($semi-dark, 19%), lighten($semi-dark, 3%)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  height: 100%;
+}

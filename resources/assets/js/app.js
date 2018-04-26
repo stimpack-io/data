@@ -13,8 +13,18 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-import MarketingPage from './components/MarketingPage';
+import DataPage from './components/DataPage';
 import React from 'react';
 import { render } from 'react-dom';
 
-//render(<MarketingPage />, document.getElementById('main'));
+import fontawesome from '@fortawesome/fontawesome'
+import regular from '@fortawesome/fontawesome-free-regular'
+import solid from '@fortawesome/fontawesome-free-solid'
+import brands from '@fortawesome/fontawesome-free-brands'
+
+fontawesome.library.add(regular)
+fontawesome.library.add(solid)
+fontawesome.library.add(brands)
+
+
+render(<DataPage />, document.getElementById('main'));

@@ -10,13 +10,13 @@ use App\User;
 class PackController extends Controller
 {
     public function index() {
-        //$packs = Pack::with('user')->get();
+        $packs = Pack::with('user')->get();
         //return $this->transformPacks($packs);
-        $packs = Pack::all();
+        //$packs = Pack::all();
         $data = collect([
             "packs" => $packs
         ]);
-        
+
         return view('data')->with(["data" => $data]);
     }
 
@@ -53,5 +53,8 @@ class PackController extends Controller
         return User::where('stimpack_io_token', request()->header('stimpack-io-token'))->first();
     }
 
+    public function review($id) {
+        return Pack::find($id)->content;
+    }
 
 }
