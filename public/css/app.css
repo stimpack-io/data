@@ -27,6 +27,32 @@ a {
   text-decoration: none;
 }
 
+.header {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 13px;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.heading-icon-and-app-name {
+  color: #AFE418;
+  margin-right: 50px;
+}
+
+.header-text {
+  margin-left: 5px;
+  font-weight: 700;
+  font-size: 150%;
+  font-style: italic;
+  font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+.logo {
+  -webkit-transform: rotate(-305deg);
+          transform: rotate(-305deg);
+}
+
 /*!
  * Bootstrap v4.1.0 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors

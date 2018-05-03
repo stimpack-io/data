@@ -7,7 +7,7 @@ use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Socialite;
 use App\User;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
@@ -38,7 +38,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('logout');
+        $this->middleware('guest')->except('acceptTermsBeforeRegister');
     }
 
     /**
@@ -62,10 +62,7 @@ class LoginController extends Controller
     public function handleProviderCallback()
     {
         $user = Socialite::driver('github')->user();
-
-        $authUser = $this->findOrCreateUser($user);
-        Auth::login($authUser, true);
-        return redirect($this->redirectTo);
+        return $this->attemptLogin($user);
     }
 
     /**
@@ -75,21 +72,37 @@ class LoginController extends Controller
      * @param $provider Social auth provider
      * @return  User
      */
-    public function findOrCreateUser($user)
+    public function attemptLogin($user)
     {
         $authUser = User::where('provider_id', $user->id)->first();
         if ($authUser) {
-            return $authUser;
-        }
+            Auth::login($authUser, true);
+            return redirect($this->redirectTo);
+        } else {
+            //return redirect("/acceptTermsBeforeRegister")->with(['user' => $user]);
+            return redirect("/register")->with(['user' => $user]);
+        }        
+    }
 
-        $this->redirectTo = '/welcome';
+    //public function acceptTermsBeforeRegister(Request $request)
+    //{
+    //    return view("acceptTermsBeforeRegister")->with(["user" => $request->session()->get('user')]);
+    //}
 
-        return User::create([
+    public function register(Request $request)
+    {
+        $user = $request->session()->get('user');
+        
+        $authUser = User::create([
             'name'     => $user->name,
-            'email'    => $user->email,
+            'nickname' => $user->nickname,
             'provider' => 'github',
             'provider_id' => $user->id,
             'stimpack_io_token' => bin2hex(random_bytes(24))
         ]);
-    }
+
+        Auth::login($authUser, true);
+
+        return redirect($this->redirectTo);        
+    }    
 }

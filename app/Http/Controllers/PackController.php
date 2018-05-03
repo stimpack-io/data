@@ -57,4 +57,9 @@ class PackController extends Controller
         return Pack::find($id)->content;
     }
 
+    public function resolve($author, $packName) {
+        $user = User::where('nickname', $author)->first();
+        return Pack::where('user_id', $user->id)->where('name', $packName)->first()->content;
+    }    
+
 }

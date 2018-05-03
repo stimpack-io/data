@@ -11,20 +11,22 @@
 |
 */
 
-Route::get('/', function() {
-    return view('marketing');
-});
-
-
 // Register in order to upload packs
-Route::get('/register', 'Auth\LoginController@redirectToProvider');
 Route::get('/login', 'Auth\LoginController@redirectToProvider');
 Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
+
+//Route::get('/acceptTermsBeforeRegister', 'Auth\LoginController@acceptTermsBeforeRegister');
+Route::get('/register', 'Auth\LoginController@register');
+
 Route::get('/welcome', function() {
     return view('welcome');
 });
 
 // Packs
+Route::get('/', 'PackController@index');
 Route::get('/packs', 'PackController@index');
 Route::post('/packs/upload', 'PackController@upload');
 Route::get('/packs/{id}/review', 'PackController@review');
+Route::get('/packs/{author}/{packName}', 'PackController@resolve');
+
+Route::get('/users', 'UserController@index');
