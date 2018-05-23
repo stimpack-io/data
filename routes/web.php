@@ -15,12 +15,18 @@
 Route::get('/login', 'Auth\LoginController@redirectToProvider');
 Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
 
-//Route::get('/acceptTermsBeforeRegister', 'Auth\LoginController@acceptTermsBeforeRegister');
-Route::get('/register', 'Auth\LoginController@register');
-
 Route::get('/welcome', function() {
     return view('welcome');
 });
+
+Route::get('/profile', 'ProfileController@index');
+
+
+
+
+
+
+
 
 // Packs
 Route::get('/', 'PackController@index');
