@@ -81,7 +81,7 @@ class LoginController extends Controller
         } else {
             //return redirect("/acceptTermsBeforeRegister")->with(['user' => $user]);
             return redirect("/register")->with(['user' => $user]);
-        }        
+        }
     }
 
     //public function acceptTermsBeforeRegister(Request $request)
@@ -92,9 +92,8 @@ class LoginController extends Controller
     public function register(Request $request)
     {
         $user = $request->session()->get('user');
-        
+
         $authUser = User::create([
-            'name'     => $user->name,
             'nickname' => $user->nickname,
             'provider' => 'github',
             'provider_id' => $user->id,
@@ -103,6 +102,6 @@ class LoginController extends Controller
 
         Auth::login($authUser, true);
 
-        return redirect($this->redirectTo);        
-    }    
+        return redirect($this->redirectTo);
+    }
 }
