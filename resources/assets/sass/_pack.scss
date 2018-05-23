@@ -1,16 +1,32 @@
 .pack-wrapper{
-    margin-top: 60px;
-}
-
-.pack-icon-container {
-    width: 100%;
-    height: 64px;
-    background: $darkest;
-    text-align: center;
+    margin-top: 30px;
+    padding: 30px;
 }
 
 .pack-card {
-    margin-top: 32px;
+    max-height: 400px;
+    margin-top: 30px !important;
+    box-shadow: -7px 7px $shadow;
+}
+
+.card{
+    border-radius: 0px;
+}
+
+.card-title-wrapper{
+    width: 100%;
+    height: 64px;
+    background: $darkest;
+    text-align: left;
+    padding: 15px;
+    padding-top: 30px;
+}
+
+.card-title{
+    margin-bottom: 0px !important;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 .pack-user {
@@ -20,11 +36,21 @@
     color: $theme-color2;
 }
 
+.pack-user a:hover{
+    color: $theme-color;
+    text-decoration: underline;
+}
+
+
+
 .pack-description {
     margin-top: 20px !important;
     font-family: $secondary-font;
     font-weight: 400;
     color: $theme-color2;
+    height: 150px;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .pack-button {

@@ -9,8 +9,6 @@ export default class Header extends Component {
                     <span className="logo-text headline-text-style">Stimpack</span>
                 </div>
                 <div className="menu">
-                    <div className="menu-bottom">
-                    </div>
                 </div>
             </div>
         );
