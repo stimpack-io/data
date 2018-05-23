@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\UploadRequest;
 use App\Pack;
 use App\User;
+use Auth;
 
 class PackController extends Controller
 {
@@ -17,7 +18,10 @@ class PackController extends Controller
             "packs" => $packs
         ]);
 
-        return view('data')->with(["data" => $data]);
+        return view('welcome')->with([
+            "data" => $data,
+            "user" => Auth::user()
+        ]);
     }
 
     public function upload(UploadRequest $request) {

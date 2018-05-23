@@ -14,10 +14,7 @@
 // Register in order to upload packs
 Route::get('/login', 'Auth\LoginController@redirectToProvider');
 Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
-
-Route::get('/welcome', function() {
-    return view('welcome');
-});
+Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::get('/profile', 'ProfileController@index');
 Route::get('/acceptGDPRBeforeContinuing', 'ProfileController@acceptGDPRBeforeContinuing');

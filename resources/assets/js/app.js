@@ -13,9 +13,14 @@ require('./bootstrap');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-import DataPage from './components/DataPage';
+import Main from './components/Main';
 import React from 'react';
 import { render } from 'react-dom';
+import ReactDOM from 'react-dom';
+
+import {Provider} from 'react-redux';
+import {createStore} from 'redux';
+import allReducers from './reducers';
 
 import fontawesome from '@fortawesome/fontawesome'
 import regular from '@fortawesome/fontawesome-free-regular'
@@ -27,4 +32,13 @@ fontawesome.library.add(solid)
 fontawesome.library.add(brands)
 
 
-render(<DataPage />, document.getElementById('main'));
+const store = createStore(
+    allReducers    
+);
+
+ReactDOM.render(
+    <Provider store={store}>
+        <Main />
+    </Provider>,
+    document.getElementById('main')
+);

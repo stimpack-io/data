@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom'
 import { Card, Button, CardImg, CardTitle, CardText, CardGroup, CardDeck,
     CardSubtitle, CardBody, Col, Row } from 'reactstrap'
 
-export default class Side extends Component {
+export default class Packs extends Component {
 
     render() {
         return (

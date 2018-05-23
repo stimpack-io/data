@@ -29,7 +29,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/profile';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -38,7 +38,7 @@ class LoginController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('guest')->except('acceptTermsBeforeRegister');
+        $this->middleware('guest', ['except' => ['logout', 'getLogout']]);
     }
 
     /**

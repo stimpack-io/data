@@ -1,10 +1,13 @@
-  <div style="text-align: center; margin-top: 40px;">
-    <h1>Awesome, youre in</h1>
-    <img src="img/stimpack_favicon.png">
-    
-    
-    <p>Next, register your token in your local stimpack client</p>
-    <a href="{{"http://stimpack.test/register/" . Auth::user()->stimpack_io_token }}">
-      register
-    </a>
-  </div>
+<head>
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link href="css/app.css" rel="stylesheet">
+</head>
+<body>
+  <div id="main">
+    <script>
+        let data = {!! $data->toJson() !!};
+        let user = {!! ($user) ? $user->toJson() : "null"  !!};
+    </script>
+
+  <script src="{{asset('js/app.js')}}" ></script>
+</body>
