@@ -1,31 +1,61 @@
 .header {
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-top: 10px;
-    padding-bottom: 13px;
-    background-color: $darkest;
-}
-
-.heading-icon-and-app-name {    
-    color: $neon-green;
-    margin-right: 50px;    
-}
-
-
-.header-text {
-    margin-left: 5px;
-    font-weight: 700;
-    font-size: 150%;
-    font-style: italic;
-    //text-transform: uppercase;
-    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+    position: relative;
+    display: block;
 }
 
 .logo{
-    transform: rotate(-305deg);
+    display: inline-block;
+    position: relative;
+    bottom: 0px;
+    height: 71px;
+    line-height: 68px;
+    background: $darkest;
+    width: 250px;
+    text-align: center;
+    box-shadow: -7px 7px $shadow;
+    border: 3px solid $theme-color;
 }
 
-.pack-body {
-    //height: 600px;
-    //overflow: hidden;
+.logo-text {
+    position: relative;
+    display: inline;
+    font-size: 21px !important;
+}
+
+.menu{
+    display: inline-block;
+    position: absolute;
+    width: calc(100% - 250px);
+    line-height: 45px;
+}
+
+.menu-bottom{
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 55px;
+    line-height: 50px;
+    padding-left: 20px;
+    padding-top: 8px;
+    box-shadow: 0px 4px $shadow;
+    background: $dark;
+}
+
+.control-bar-item + .control-bar-item{
+    margin-left: 27px;
+}
+
+.control-bar-item{
+    cursor: pointer;
+}
+
+.control-bar-item-text{
+    color: $theme-color2;
+    -webkit-transition: color 0.5s; /* Safari */
+    transition: color 0.5s;
+    font-size: 15px;
+}
+
+.control-bar-item-text:hover{
+    color: $theme-color;
 }

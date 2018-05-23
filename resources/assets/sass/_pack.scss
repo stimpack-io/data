@@ -1,8 +1,12 @@
+.pack-wrapper{
+    margin-top: 60px;
+}
+
 .pack-icon-container {
     width: 100%;
     height: 64px;
-    background: $semi-dark;
-    text-align: center;    
+    background: $darkest;
+    text-align: center;
 }
 
 .pack-card {
@@ -10,20 +14,19 @@
 }
 
 .pack-user {
-    margin-top: 20px !important;
+    margin-top: 5px !important;
+    font-family: $secondary-font;
+    font-weight: 600;
+    color: $theme-color2;
 }
 
 .pack-description {
     margin-top: 20px !important;
+    font-family: $secondary-font;
+    font-weight: 400;
+    color: $theme-color2;
 }
 
 .pack-button {
     margin-right: 10px;
 }
-
-a {
-    font-size: 90%;
-    color: black !important;
-    text-decoration: none;
-}
-

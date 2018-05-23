@@ -1,0 +1,143 @@
+#pseudo-wrapper {
+    font-size: 1rem; 
+    //background-color: #141518;    
+    float: left;
+    margin-right: 20px;
+    width: 50%;
+}
+
+#help-wrapper {
+    font-size: 1rem;
+    //background-color: #141518;
+    display: inline-block;
+    width: 40%;    
+}
+
+#pseudo-editor {
+    font-size: 1rem;
+    background-color: #141518;    
+    width: 100%;
+    height: 600px;
+    position: relative;
+}
+
+#help-content {
+    font-size: 1rem;
+    background-color: darken($middle, 5%);    
+    width: 100%;
+    height: 600px;
+    position: relative;
+    padding-left: 40px;
+    line-height: 10%;
+}
+
+h6 {
+    font-weight: 900 !important;
+    margin-top: 20px !important;
+}
+
+h6 ~ *:not(h6) {
+    margin-left: 40px;
+    margin-top: 20px;    
+}
+
+#php-wrapper {
+    font-size: 1rem;
+    display: inline-block;
+    width: 100%;    
+}
+
+.result-editor {
+    font-size: 1rem;
+    width: 100%;
+}
+
+#editor {
+    height: 100px;
+}
+
+.ace_editor{background: rgba(0,0,0,1)!important}
+
+.editor-tabs {
+    list-style-type: none;    
+    padding: 0;    
+    min-height:24px;    
+    background-color: darken($middle, 5%) !important; // This should be $middle @brainmaniac?? !;
+    margin-bottom: 0px !important;    
+    font-size: 0.9rem;
+    line-height: 2;
+
+}
+
+.help-tabs {
+    list-style-type: none;    
+    padding: 0;    
+    min-height:24px;    
+    background-color: darken($middle, 5%) !important; // This should be $middle @brainmaniac?? !;
+    margin-bottom: 0px !important;    
+    font-size: 0.9rem;
+    line-height: 2;
+    
+}
+
+ul {
+    width: 100%;
+    list-style-type: none;
+}
+
+//ul > * {}
+
+.editor-tab {
+    margin-right: 5px;
+    //background-color: #141518;
+    background-color: darken($middle, 5%)    ;
+    float: left;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-top: 1px solid;
+    border-color: darken(white, 70%);
+    min-width: 60px;
+}
+
+.editor-tab-active {
+    border-color: darken(white, 50%);
+    background-color: #141518;
+}
+
+.help-tab {
+    margin-right: 5px;
+    //background-color: #141518;
+    background-color: darken($middle, 5%)    ;
+    float: left;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-top: 1px solid;
+    border-color: darken(white, 70%);
+    min-width: 60px;
+}
+
+.help-tab-active {
+    border-color: darken(white, 50%);
+    background-color: #141518;    
+}
+
+.input-tab {
+    background-color: #141518;    
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding-left: 4px;
+    padding-right: 4px;
+    text-decoration: none;
+}
+
+li a:hover {    
+    text-decoration: none;
+}
+
+#tools > * {
+    margin-left:10px;
+}

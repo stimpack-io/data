@@ -1,0 +1,45 @@
+.side{
+    display: block;
+    position: fixed;
+    background-color: lighten($darkest, 13%);;
+    width: 243px;
+    height: 100% ;
+    padding: 10px;
+    margin-top: 7px;
+    text-align: center;
+    overflow: auto;
+}
+
+.side-button-wrapper{
+    padding-bottom: 100px;
+}
+
+.side-button{
+    display: block;
+    position: relative;
+    margin: auto;
+    margin-top: 8px;
+    background-color: $darkest;
+    color: $theme-color;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 13px;
+    width: 210px;
+    max-width: 210px;
+    height: 45px;
+    border: none;
+    box-shadow: -2px 2px $shadow;
+    -webkit-transition: box-shadow 0.35s; /* Safari */
+    transition: box-shadow 0.35s;
+    outline: none;
+}
+
+.side-button:hover{
+    background: $theme-color;
+    color: $darkest;
+    cursor: pointer;
+    box-shadow: 0px 0px $shadow;
+}
+.starter-button{
+    border: 2px solid $theme-color;
+}
