@@ -29,7 +29,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/packs';
+    protected $redirectTo = '/profile';
 
     /**
      * Create a new controller instance.
@@ -78,10 +78,18 @@ class LoginController extends Controller
         if ($authUser) {
             Auth::login($authUser, true);
             return redirect($this->redirectTo);
-        } else {
-            //return redirect("/acceptTermsBeforeRegister")->with(['user' => $user]);
-            return redirect("/register")->with(['user' => $user]);
         }
+
+        $authUser = User::create([
+            'nickname' => $user->nickname,
+            'provider' => 'github',
+            'provider_id' => $user->id,
+            'stimpack_io_token' => bin2hex(random_bytes(24))
+        ]);
+
+        Auth::login($authUser, true);
+
+        return redirect($this->redirectTo);        
     }
 
     //public function acceptTermsBeforeRegister(Request $request)

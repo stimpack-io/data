@@ -20,13 +20,8 @@ Route::get('/welcome', function() {
 });
 
 Route::get('/profile', 'ProfileController@index');
-
-
-
-
-
-
-
+Route::get('/acceptGDPRBeforeContinuing', 'ProfileController@acceptGDPRBeforeContinuing');
+Route::get('/acceptGDPR', 'ProfileController@acceptGDPR');
 
 // Packs
 Route::get('/', 'PackController@index');

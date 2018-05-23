@@ -16,3 +16,11 @@ use Illuminate\Foundation\Inspiring;
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->describe('Display an inspiring quote');
+
+Artisan::command('delete:users', function () {
+    $this->confirm("Whoa! Are you sure about this?");
+    \App\User::all()->each(function($user) {
+        $user->delete();
+    });
+    $this->comment("Deleted all users!");
+})->describe('Delete all users!');

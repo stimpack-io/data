@@ -6,15 +6,39 @@ use Illuminate\Http\Request;
 use App\Http\Requests\UploadRequest;
 use App\Pack;
 use App\User;
+use Auth;
 
 class ProfileController extends Controller
 {
-    public function __constuct()
+    public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware([
+            'auth'
+        ]);        
+        
+        $this->middleware([
+            'hasAcceptedGDPR'
+        ])->except([
+            'acceptGDPRBeforeContinuing', 'acceptGDPR'
+        ]);
+                
     }
 
     public function index() {
-        return User::first();
+        return view('profile')->with([
+            "user" => Auth::user()
+        ]);
     }
+
+    public function acceptGDPRBeforeContinuing() {
+        return view('acceptGDPRBeforeContinuing');
+    }
+    
+    public function acceptGDPR() {
+        $user = Auth::user();
+        $user->has_accepted_gdpr = true;
+        $user->save();
+        return redirect('/profile');    
+    }
+
 }
