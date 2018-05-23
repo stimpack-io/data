@@ -31,6 +31,7 @@ export class Header extends Component {
         } else {
             return (
                 <div>
+                    <p data-page="Packs" onClick={this.navigate.bind(this)}>Packs</p>
                     <p data-page="Login" onClick={this.login.bind(this)}>Login</p>
                     <p data-page="Register" onClick={this.login.bind(this)}>Register</p>
                 </div>

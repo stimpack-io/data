@@ -62,17 +62,14 @@ class LoginController extends Controller
     public function handleProviderCallback()
     {
         $user = Socialite::driver('github')->user();
-        return $this->attemptLogin($user);
+        return $this->login($user);
     }
 
     /**
-     * If a user has registered before using social auth, return the user
-     * else, create a new user object.
      * @param  $user Socialite user object
-     * @param $provider Social auth provider
-     * @return  User
+     * @return  Redirect
      */
-    public function attemptLogin($user)
+    public function login($user)
     {
         $authUser = User::where('provider_id', $user->id)->first();
         if ($authUser) {
@@ -90,26 +87,5 @@ class LoginController extends Controller
         Auth::login($authUser, true);
 
         return redirect($this->redirectTo);        
-    }
-
-    //public function acceptTermsBeforeRegister(Request $request)
-    //{
-    //    return view("acceptTermsBeforeRegister")->with(["user" => $request->session()->get('user')]);
-    //}
-
-    public function register(Request $request)
-    {
-        $user = $request->session()->get('user');
-
-        $authUser = User::create([
-            'nickname' => $user->nickname,
-            'provider' => 'github',
-            'provider_id' => $user->id,
-            'stimpack_io_token' => bin2hex(random_bytes(24))
-        ]);
-
-        Auth::login($authUser, true);
-
-        return redirect($this->redirectTo);
     }
 }
