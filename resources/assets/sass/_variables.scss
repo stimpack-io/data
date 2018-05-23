@@ -1,4 +1,25 @@
-$neon-green: #AFE418;
-$darkest: rgba(0,0,0, 0.45);
-$dark: rgba(0,0,0, 0.2);
-$semi-dark: #31363F;
+// Typography
+$font-size-base: 0.9rem;
+$line-height-base: 1.6;
+$primary-font: "Press Start 2P", cursive;
+$secondary-font: 'Open Sans', sans-serif;
+
+// Colors
+$base-color: #343338;
+
+$darkest: lighten( $base-color, 3%);
+$dark: lighten( $darkest, 5%);
+$middle: lighten( $dark, 5%);
+$lighter: lighten( $middle, 10% );
+$bright: lighten( $lighter, 15% );
+$super-bright: lighten( $lighter, 50% );
+
+$shadow: darken($base-color, 3%);
+
+// Theme color
+$theme-color: #40fc3a;
+$theme-color2: lighten($theme-color, 27%);
+$theme-color3: darken($theme-color, 14%);
+
+// Modals
+$modal-content-width: 760px;;

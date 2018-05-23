@@ -10,8 +10,8 @@ export default class DataPage extends Component {
         return (
             <div>
                 <Header />
-                <div className="container">
-                    <Row>
+                <div className="container packs-container">
+                    <Row className="pack-wrapper">
                         {this.renderPacks()}
                     </Row>
                 </div>
@@ -27,11 +27,11 @@ export default class DataPage extends Component {
                         <div className="pack-icon-container">
                         </div>
                         <CardBody className="pack-body">
-                            <CardTitle>{pack.name}</CardTitle>
-                            <CardSubtitle><a href={"https://github.com/" + pack.user.nickname}>{pack.user.nickname}</a></CardSubtitle>
+                            <CardTitle className="card-title">{pack.name}</CardTitle>
+                            <CardSubtitle className="pack-user">by <u><a href={"https://github.com/" + pack.user.nickname} className="pack-user">{pack.user.nickname}</a></u></CardSubtitle>
                             <CardText className="pack-description">{pack.description}</CardText>
-                            <Button value={pack.name} onClick={this.open} className="pack-button">Open</Button>
-                            <Button value={pack.id} onClick={this.review} className="pack-button">Review JSON</Button>                            
+                            <Button value={pack.name} onClick={this.open} className="btn modal-buttons-style">Open</Button>
+                            <Button value={pack.id} onClick={this.review} className="btn modal-buttons-style">Review JSON</Button>
                         </CardBody>
                     </Card>
                 </Col>
@@ -45,5 +45,5 @@ export default class DataPage extends Component {
 
     review(event) {
         window.open('http://data.stimpack.test/packs/' + event.target.value + '/review', '_blank');
-    }    
+    }
 }

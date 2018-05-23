@@ -1,0 +1,35 @@
+.icon-control-bar {
+    color: $theme-color;    
+    font-size: 100%;
+    margin-right: 10px;    
+} .icon-control-bar:hover {
+    color: white;
+    transform: scale(1.2,1.2);    
+}
+
+.icon-close-task{
+    float:right;
+    color: $middle;
+    font-size: 165%;
+}
+
+.icon-footer{
+    font-size: 165%;
+    margin-left: 10px;
+}
+
+.icon-right {
+    float:right;    
+}
+
+.log-ok {
+    color: $theme-color;    
+}
+
+.log-pending {
+    color: $theme-color;    
+}
+
+.log-error {
+    color: DarkOrange;    
+}
