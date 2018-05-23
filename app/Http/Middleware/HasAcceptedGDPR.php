@@ -15,8 +15,8 @@ class HasAcceptedGDPR
      * @return mixed
      */
     public function handle($request, Closure $next)
-    {
-        if(!Auth::user()->has_accepted_gdpr) {
+    {        
+        if(!Auth::user()->has_accepted_gdpr) {            
             return redirect('/acceptGDPRBeforeContinuing');
         }
 
