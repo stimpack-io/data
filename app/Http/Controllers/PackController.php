@@ -28,7 +28,7 @@ class PackController extends Controller
         $pack = new Pack();
         $pack->name = $request->name;
         $pack->description = $request->description;
-        $pack->content = $request->fileContent;
+        $pack->content = $request->content;
         $pack->user_id = $this->user()->id;        
         $pack->icon = "cube";
         $pack->save();       
@@ -63,7 +63,7 @@ class PackController extends Controller
 
     public function resolve($author, $packName) {
         $user = User::where('nickname', $author)->first();
-        return Pack::where('user_id', $user->id)->where('name', $packName)->first()->content;
+        return Pack::where('user_id', $user->id)->where('name', $packName)->first();
     }    
 
 }
