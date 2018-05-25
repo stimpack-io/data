@@ -8,33 +8,12 @@ export default class Profile extends Component {
     render() {
         return (
             <div className="workspace">
-                <p>
-                    Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!
-                    Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!
-                    Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!
-                    Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!
-                    Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!
-                    Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!
-                    Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!
-                    Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!
-                    Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!
-                    Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!
-                    Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!
-                    Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!
-                    Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!
-                    Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!
-                    Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!
-                    Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!
-                    Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!
-                    Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!
-                    Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!
-                    Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!
-                    Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!Hej detta är en profil!                                                                                                                                                                                                                                                                                                                                                                                                                
-                    
-                    
-                    
-                    
-                </p>
+                <div >
+                    <h3>Cool, welcome {user.nickname}!</h3>
+                    <p>First, make sure you have installed stimpack-io/stimpack</p>
+                    <p>Then, register the token in your local installation by visiting:</p>
+                    <p><b>STIMPACK_IO_TOKEN={user.stimpack_io_token}</b></p>
+                </div>
                 <p>{user.nickname}</p>
             </div>
         )
