@@ -1,4 +1,4 @@
-.headline-text-style, h4, .card-title{
+.headline, h4, .card-title{
     color: $theme-color;
     text-transform: uppercase;
     font-family: $primary-font;
@@ -43,4 +43,12 @@ hr{
 
 .packs-container{
     margin-top: 100px;
+}
+
+.color2{
+    color: $theme-color2;
+}
+
+a:hover{
+    color:$theme-color;
 }

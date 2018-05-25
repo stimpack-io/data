@@ -10,7 +10,7 @@ export class Header extends Component {
         return (
             <div id="header" className="header">
                 <div className="logo">
-                    <span className="logo-text headline-text-style">Stimpack</span>
+                    <span className="logo-text headline">Stimpack</span>
                 </div>
                 <div className="menu">
                     {this.renderUserNavigation()}
