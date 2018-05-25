@@ -13,7 +13,7 @@ export default class Profile extends Component {
                     <div className="color2">
                         <p>First, make sure you have installed stimpack-io/stimpack</p>
                         <p>Then, register the token in your local installation by visiting:</p>
-                        <a href={"http://stimpack-dev.test/register/" + user.stimpack_io_token}>{"http://stimpack-dev.test/register/" + user.stimpack_io_token}</a>
+                        <a href={ stimpack_client_url + "/register/" + user.stimpack_io_token}>{stimpack_client_url"/register/" + user.stimpack_io_token}</a>
                         <p>If you prefer to do it manually enter the following key/value in your env file</p>
                         <p><b>STIMPACK_IO_TOKEN={user.stimpack_io_token}</b></p>
                         <p>Now you are ready to roll out,</p>

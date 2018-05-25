@@ -40,6 +40,6 @@ export default class Packs extends Component {
     }
 
     review(event) {
-        window.open('http://data.stimpack.test/packs/' + event.target.value + '/review', '_blank');
+        window.open( + '/packs/' + event.target.value + '/review', '_blank');
     }
 }

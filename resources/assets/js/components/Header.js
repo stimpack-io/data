@@ -23,7 +23,7 @@ export class Header extends Component {
         if(user) {
             return (
                 <div>
-                    <p data-page="Packs" onClick={this.navigate.bind(this)}>Packs</p>                    
+                    <p data-page="Packs" onClick={this.navigate.bind(this)}>Packs</p>
                     <p data-page="Profile" onClick={this.navigate.bind(this)}>Profile</p>
                     <p data-page="Logout" onClick={this.logout.bind(this)}>Logout</p>
                 </div>
@@ -35,9 +35,9 @@ export class Header extends Component {
                     <p data-page="Login" onClick={this.login.bind(this)}>Login</p>
                     <p data-page="Register" onClick={this.login.bind(this)}>Register</p>
                 </div>
-                            
+
             )
-            
+
         }
 
 
@@ -48,12 +48,12 @@ export class Header extends Component {
     }
 
     login() {
-        window.location.href = "http://data.stimpack.test/login";
-    }    
+        window.location.href = "/login";
+    }
 
     logout() {
-        window.location.href = "http://data.stimpack.test/logout";
-    }    
+        window.location.href = "/logout";
+    }
 }
 
 function mapStateToProps(state) {
