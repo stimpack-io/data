@@ -20,7 +20,8 @@ class PackController extends Controller
 
         return view('welcome')->with([
             "data" => $data,
-            "user" => Auth::user()
+            "user" => Auth::user(),
+            "stimpack_client_url" => env("STIMPACK_CLIENT_URL") 
         ]);
     }
 
@@ -31,7 +32,7 @@ class PackController extends Controller
         $pack->content = $request->content;
         $pack->user_id = $this->user()->id;        
         $pack->icon = "cube";
-        $pack->save();       
+        $pack->save();
     }
 
     private function transformPacks($packs) {
@@ -63,7 +64,12 @@ class PackController extends Controller
 
     public function resolve($author, $packName) {
         $user = User::where('nickname', $author)->first();
+<<<<<<< HEAD
         return Pack::where('user_id', $user->id)->where('name', $packName)->first();
     }    
+=======
+        return Pack::where('user_id', $user->id)->where('name', $packName)->first()->content;
+    }
+>>>>>>> acc7e57a75e8a11e42acffdc11e6dcbc2bfb2438
 
 }

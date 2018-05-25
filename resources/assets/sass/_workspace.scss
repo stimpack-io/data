@@ -4,4 +4,9 @@
     margin-left: 243px;
     margin-top: 74px;
     width: calc(100%-243px);
+    padding: 30px;
+
+    .headline{
+        text-shadow: -2px 2px $dark;
+    }
 }
