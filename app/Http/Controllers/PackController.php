@@ -14,7 +14,7 @@ class PackController extends Controller
         return new PackController();
     }
 
-    public function index() {
+    public function index($defaultPage = "Packs") {
         $packs = Pack::with('user')->get();
         //return $this->transformPacks($packs);
         //$packs = Pack::all();
@@ -25,7 +25,8 @@ class PackController extends Controller
         return view('welcome')->with([
             "data" => $data,
             "user" => Auth::user(),
-            "stimpack_client_url" => env("STIMPACK_CLIENT_URL") 
+            "stimpack_client_url" => env("STIMPACK_CLIENT_URL") ,
+            "defaultPage" => $defaultPage
         ]);
     }
 

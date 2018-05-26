@@ -1,4 +1,6 @@
-export default function (state = "Packs", action) {
+
+
+export default function (state = defaultPage, action) {
 
 	if(action.type == "NAVIGATE") {
 		console.log(action.payload);

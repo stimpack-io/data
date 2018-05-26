@@ -8,6 +8,7 @@
         let data = {!! $data->toJson() !!};
         let user = {!! ($user) ? $user->toJson() : "null"  !!};
         let stimpack_client_url = "{{ $stimpack_client_url }}";
+        let defaultPage = "{{ $defaultPage }}";
     </script>
 
   <script src="{{asset('js/app.js')}}" ></script>

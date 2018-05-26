@@ -37,10 +37,10 @@ class ProfileController extends Controller
 
     public function acceptGDPR() {
         $user = Auth::user();
-        $user->has_accepted_gdpr = "1";
+        $user->has_accepted_gdpr = true;
         $user->save();
-
-        return redirect('/');
+        
+        return PackController::make()->index('Profile');
     }
 
 }
