@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
-
+import { navigate } from '../actions';
 
 import { Card, Button, CardImg, CardTitle, CardText, CardGroup, CardDeck,
     CardSubtitle, CardBody, Col, Row } from 'reactstrap';
@@ -10,16 +10,19 @@ import Header from './Header.js';
 import Side from './Side.js';
 import Packs from './Packs.js';
 import Profile from './Profile.js';
+import AcceptGdpr from './AcceptGdpr.js';
 
 const Pages = {
     Packs: Packs,
-    Profile: Profile
+    Profile: Profile,
+    AcceptGdpr: AcceptGdpr
 }
 
 export class Main extends Component {
-    
+
     render() {
-        let Page = Pages[this.props.activePage];
+        let Page = this.getActivePageOrGdpr();
+
         return (
             <div>
                 <Header />
@@ -28,6 +31,18 @@ export class Main extends Component {
             </div>
         )
     }
+
+    getActivePageOrGdpr(){
+
+        if(user && user.has_accepted_gdpr == "0" && this.props.activePage != "AcceptGdpr"){
+            console.log('here!')
+            //this.props.navigate("AcceptGdpr")
+        }else{
+            console.log('else')
+            return Pages[this.props.activePage]
+        }
+    }
+
 }
 
 function mapStateToProps(state) {
@@ -39,7 +54,7 @@ function mapStateToProps(state) {
 function matchDispatchToProps(dispatch){
     return bindActionCreators(
         {
-            //
+            navigate: navigate
         }, dispatch);
 }
 
