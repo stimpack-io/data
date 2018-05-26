@@ -23,7 +23,10 @@ export class Header extends Component {
         if(user) {
             return (
                 <div>
-                    <p data-page="Packs" onClick={this.navigate.bind(this)}>Packs</p>
+
+                    <span name="Packs" data-page="Packs" onClick={this.navigate.bind(this)} className="control-bar-item">
+                        <i title="Packs" className={"fas fa-cubes icon-control-bar"}></i><span className="control-bar-item-text">Packs</span>
+                    </span>
                     <p data-page="Profile" onClick={this.navigate.bind(this)}>Profile</p>
                     <p data-page="Logout" onClick={this.logout.bind(this)}>Logout</p>
                 </div>
@@ -44,7 +47,8 @@ export class Header extends Component {
     }
 
     navigate(event) {
-        this.props.navigate(event.target.dataset.page)
+        event.preventDefault()
+        this.props.navigate(event.currentTarget.dataset.page)
     }
 
     login() {

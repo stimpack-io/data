@@ -14,14 +14,14 @@ class ProfileController extends Controller
     {
         $this->middleware([
             'auth'
-        ]);        
-        
+        ]);
+
         $this->middleware([
             'hasAcceptedGDPR'
         ])->except([
             'acceptGDPRBeforeContinuing', 'acceptGDPR'
         ]);
-                
+
     }
 
     public function index() {
@@ -33,12 +33,12 @@ class ProfileController extends Controller
     public function acceptGDPRBeforeContinuing() {
         return view('acceptGDPRBeforeContinuing');
     }
-    
+
     public function acceptGDPR() {
         $user = Auth::user();
-        $user->has_accepted_gdpr = true;
+        $user->has_accepted_gdpr = "1";
         $user->save();
-        return redirect('/profile');    
+        return redirect('/profile');
     }
 
 }
