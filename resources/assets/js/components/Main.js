@@ -35,10 +35,10 @@ export class Main extends Component {
     getActivePageOrGdpr(){
 
         if(user && user.has_accepted_gdpr == "0" && this.props.activePage != "AcceptGdpr"){
-            console.log('here!')
+            console.log('Shold send u to AcceptGdpr!')
             //this.props.navigate("AcceptGdpr")
         }else{
-            console.log('else')
+            console.log('You made the Gdpr test!')
             return Pages[this.props.activePage]
         }
     }
