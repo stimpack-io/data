@@ -1,5 +1,6 @@
 <head>
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link href="css/app.css" rel="stylesheet">
 </head>
 <body>
