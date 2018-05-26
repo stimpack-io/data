@@ -7,6 +7,7 @@ use App\Http\Requests\UploadRequest;
 use App\Pack;
 use App\User;
 use Auth;
+use App\Http\Controllers\PackController;
 
 class ProfileController extends Controller
 {
@@ -38,7 +39,8 @@ class ProfileController extends Controller
         $user = Auth::user();
         $user->has_accepted_gdpr = "1";
         $user->save();
-        return redirect('/profile');
+
+        return redirect('/');
     }
 
 }

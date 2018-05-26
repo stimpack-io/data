@@ -10,6 +10,10 @@ use Auth;
 
 class PackController extends Controller
 {
+    public static function make() {
+        return new PackController();
+    }
+
     public function index() {
         $packs = Pack::with('user')->get();
         //return $this->transformPacks($packs);

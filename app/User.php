@@ -31,12 +31,8 @@ class User extends Authenticatable
         return $this->hasMany('App\Pack');
     }
 
-    /*
-        prepared for sqlite boolean to js bugfix
-
     public function getHasAcceptedGdprAttribute($value)
     {
         return (boolean) ((int) $value);
     }
-    */
 }

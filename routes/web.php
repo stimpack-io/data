@@ -28,31 +28,3 @@ Route::get('/packs/{id}/review', 'PackController@review');
 Route::get('/packs/{author}/{packName}', 'PackController@resolve');
 
 Route::get('/users', 'UserController@index');
-
-
-Route::get('/boolean', function() {
-
-    $user = new \App\User;
-    $user->has_accepted_gdpr = 1;
-    $user = \App\User::first();
-    // transform to fix the boolean bug
-    //$user->has_accepted_gdpr = ($user->has_accepted_gdpr ? "true" : "false");    
-    
-
-    return view('boolean')->with([
-        'user' => $user
-    ]);
-});
-
-
-
-
-
-
-
-
-/*
-$user = new \StdClass();
-$user->hasAcceptedGDPR = true;    
-
-$user->hasAcceptedGDPR = ($user->hasAcceptedGDPR ? "true" : "false");
