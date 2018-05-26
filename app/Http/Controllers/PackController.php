@@ -15,9 +15,11 @@ class PackController extends Controller
     }
 
     public function index($defaultPage = "Packs") {
-        $packs = Pack::with('user')->get();
-        //return $this->transformPacks($packs);
-        //$packs = Pack::all();
+        $packs = Pack::with([
+            'user'=>function($query){
+                $query->select('id', 'nickname');
+        }])->get();
+
         $data = collect([
             "packs" => $packs
         ]);
