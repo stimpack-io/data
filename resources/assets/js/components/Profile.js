@@ -10,16 +10,18 @@ export default class Profile extends Component {
             <div className="workspace">
                 <div>
                     <h3 className="headline">Welcome {user.nickname}!</h3>
-                    <div className="color2">
-                        <p>First, make sure you have installed stimpack-io/stimpack</p>
-                        <p>Then, register the token in your local installation by visiting:</p>
-                        <a href={ stimpack_client_url + "/register/" + user.stimpack_io_token}>{stimpack_client_url + "/register/" + user.stimpack_io_token}</a>
-                        <p>If you prefer to do it manually enter the following key/value in your env file</p>
-                        <p><b>STIMPACK_IO_TOKEN={user.stimpack_io_token}</b></p>
-                        <p>Now you are ready to roll out,</p>
-                        <p>Good luck!</p>
+                    <div className="connect-instructions">
+                        <div className="mt-3">   
+                            <p>Lets get started!</p>
+                            <p>First, make sure you have installed stimpack-io/stimpack</p>
+                            <p>Then, register the token in your local installation by visiting:</p>
+                            <a target="_blank" href={ stimpack_client_url + "/register/" + user.stimpack_io_token}>{stimpack_client_url + "/register/" + user.stimpack_io_token}</a><br/><br/>
+                            <p>If you prefer to do it manually enter the following key/value in your env file</p>
+                            <p><b>STIMPACK_IO_TOKEN={user.stimpack_io_token}</b></p>
+                            <p>Now you are ready to roll out,</p>
+                            <p>Good luck!</p>
+                        </div>
                     </div>
-
                 </div>
             </div>
         )
