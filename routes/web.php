@@ -26,5 +26,6 @@ Route::get('/packs', 'PackController@index');
 Route::post('/packs/upload', 'PackController@upload');
 Route::get('/packs/{id}/review', 'PackController@review');
 Route::get('/packs/{author}/{packName}', 'PackController@resolve');
+Route::get('/packs/{author}/{packName}/delete', 'PackController@delete');
 
 Route::get('/users', 'UserController@index');

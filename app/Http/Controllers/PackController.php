@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\UploadRequest;
+use App\Http\Requests\DeleteRequest;
 use App\Pack;
 use App\User;
 use Auth;
@@ -40,6 +41,18 @@ class PackController extends Controller
         $pack->user_id = $this->user()->id;        
         $pack->icon = "cube";
         $pack->save();
+    }
+
+    public function delete(DeleteRequest $request) {
+        
+        $pack = Pack::where([
+            ["user_id", $this->user()->nickname],
+            ["name", $request->packName]
+        ])->get();
+
+        $pack->delete();
+
+        return "deleted it!"; //2d2c30
     }
 
     private function transformPacks($packs) {
