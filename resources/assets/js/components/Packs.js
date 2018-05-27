@@ -40,6 +40,6 @@ export default class Packs extends Component {
     }
 
     review(event) {
-        window.open( + '/packs/' + event.target.value + '/review', '_blank');
+        window.open('/packs/' + event.target.value + '/review', '_blank');
     }
 }
