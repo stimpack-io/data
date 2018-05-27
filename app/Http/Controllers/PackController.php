@@ -38,21 +38,16 @@ class PackController extends Controller
         $pack->name = $request->name;
         $pack->description = $request->description;
         $pack->content = $request->content;
-        $pack->user_id = $this->user()->id;        
+        $pack->user_id = $this->user()->id;
         $pack->icon = "cube";
         $pack->save();
     }
 
+    //public function delete(DeleteRequest $request) {
     public function delete(DeleteRequest $request) {
-        
-        $pack = Pack::where([
-            ["user_id", $this->user()->nickname],
-            ["name", $request->packName]
-        ])->get();
-
+        $pack = Pack::where('name', $request->packName)->firstOrFail();
         $pack->delete();
-
-        return "deleted it!"; //2d2c30
+        return redirect('/');
     }
 
     private function transformPacks($packs) {
@@ -85,6 +80,6 @@ class PackController extends Controller
     public function resolve($author, $packName) {
         $user = User::where('nickname', $author)->first();
         return Pack::where('user_id', $user->id)->where('name', $packName)->first();
-    }    
+    }
 
 }

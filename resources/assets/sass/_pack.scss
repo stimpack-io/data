@@ -22,11 +22,9 @@
 
 .card-title-wrapper{
     width: 100%;
-    height: 64px;
+    height: 55px;
     background: $darkest;
     text-align: left;
-    padding: 15px;
-    padding-top: 30px;
 }
 
 .card-title{
@@ -34,6 +32,10 @@
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
+    position: relative;
+    display: block;
+    padding: 10px;
+    padding-top: 30px;
 }
 
 .pack-user {
@@ -62,4 +64,9 @@
 
 .pack-button {
     margin-right: 10px;
+}
+
+.delete-link{
+    display: block;
+    margin-top: 5px;
 }
