@@ -36,7 +36,7 @@ export default class Packs extends Component {
     }
 
     open(event) {
-        window.open('http://stimpack.test/open/ajthinking/' + event.target.value, '_blank');
+        window.open('http://stimpack.test/open/' + user.nickname + '/' + event.target.value, '_blank');
     }
 
     review(event) {
