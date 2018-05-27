@@ -20,7 +20,7 @@ export default class Packs extends Component {
             return (
                 <Col sm="4" key={pack.id}>
                     <Card className="pack-card">
-                        <div className="card-title-wrapper card-title">
+                        <div alt={pack.name} title={pack.name} className="card-title-wrapper card-title">
                             {pack.name}
                         </div>
                         <CardBody className="pack-body">
@@ -36,10 +36,10 @@ export default class Packs extends Component {
     }
 
     open(event) {
-        window.open('http://stimpack.test/open/ajthinking/' + event.target.value, '_blank');
+        window.open('http://stimpack.test/open/' + user.nickname + '/' + event.target.value, '_blank');
     }
 
     review(event) {
-        window.open( + '/packs/' + event.target.value + '/review', '_blank');
+        window.open('/packs/' + event.target.value + '/review', '_blank');
     }
 }
