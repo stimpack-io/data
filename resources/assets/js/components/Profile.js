@@ -20,6 +20,7 @@ export default class Profile extends Component {
                             <p><b>STIMPACK_IO_TOKEN={user.stimpack_io_token}</b></p>
                             <p>Now you are ready to roll out,</p>
                             <p>Good luck!</p>
+                            <p>PS. At anytime you can <a href="/users/delete">delete your account</a> and all associated content.</p>
                         </div>
                     </div>
                 </div>

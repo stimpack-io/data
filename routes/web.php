@@ -28,4 +28,4 @@ Route::get('/packs/{id}/review', 'PackController@review');
 Route::get('/packs/{author}/{packName}', 'PackController@resolve');
 Route::get('/packs/{author}/{packName}/delete', 'PackController@delete');
 
-Route::get('/users', 'UserController@index');
+Route::get('/users/delete', 'UserController@delete');
