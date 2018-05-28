@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\DeleteUserRequest;
 use App\Pack;
 use App\User;
+use Auth;
 
 class UserController extends Controller
 {
